@@ -10,8 +10,8 @@ Running the Application
 After completing the installation steps, you can run the Fish-AI-Project using the following command:
 ## Linux/Mac
 ```bash
-gh clone  ${you're git url}
-cd ${you're git url}
+gh clone  https://github.com/shim24sa/Fish-information-system
+cd Fish-information-system
 python -m venv .venv 
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -19,8 +19,8 @@ python mange.py runserver
 ```
 ## Windows
 ```bat
-gh clone  ${you're git url}
-cd ${you're git url}
+gh clone  https://github.com/shim24sa/Fish-information-system
+cd Fish-information-system
 python -m venv .venv 
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt

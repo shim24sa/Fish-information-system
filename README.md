@@ -30,6 +30,7 @@ The application will be available at http://localhost:5000.
 Usage
 Once the application is running, users can search for specific fish species and retrieve information about their habitats, behavior, and other relevant data. The application provides a user-friendly interface for navigating and exploring the various fish species in the database.
 ## Authors
+Mahya and shima 
 ## License
 MIT License
 ## Acknowledgments

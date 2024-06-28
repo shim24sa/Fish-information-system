@@ -1,5 +1,5 @@
 # Fish-Project 
-This project is designed to serve as a comprehensive platform for searching and exploring various fish species, their habitats, behavior, and other relevant information. The application is built using Python's Flask framework and utilizes MySQL as the database for storing and retrieving fish-related data.
+This project is designed to serve as a comprehensive platform for searching and exploring various fish species, their habitats, behavior, and other relevant information. The application is built using Python's Django framework and utilizes MySQL as the database for storing and retrieving fish-related data.
 
 ## Installation
 To set up the Fish-Project on your local machine, follow these steps:

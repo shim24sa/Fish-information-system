@@ -111,7 +111,7 @@ REST_FRAMEWORK = {
 # django-allauth
 # https://django-allauth.readthedocs.io/
 ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+#ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_MAX_EMAIL_ADDRESSES = 2
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
@@ -152,3 +152,12 @@ STATIC_URL = "static/"
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'apiKey': {
+            'type': 'apiKey',
+             'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+}

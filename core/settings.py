@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "dj_rest_auth",
     "dj_rest_auth.registration",
     "authentication.apps.AuthenticationConfig",
-   'drf_yasg',
+    "Fish.apps.FishConfig",
+    'drf_yasg',
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

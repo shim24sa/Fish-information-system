@@ -5,20 +5,16 @@ class Species_serializer(serializers.ModelSerializer):
         class Meta:
                 model=species
                 fields= "__all__"
-
 class waterbodies_serializer(serializers.ModelSerializer):
         class Meta:
                 model=waterbodies
                 fields= "__all__"
-
-
 class GCD_serializer(serializers.Serializer):
         Start_Latitude_org  =  serializers.DecimalField(decimal_places=2,max_digits=20)
         Start_Longitude_org =  serializers.DecimalField(decimal_places=2,max_digits=20)
         Start_Longitude_dest=  serializers.DecimalField(decimal_places=2,max_digits=20)
         Start_Latitude_dest =  serializers.DecimalField(decimal_places=2,max_digits=20)
         Distence = serializers.DecimalField(decimal_places=2,max_digits=20)
-
 class NearestItem_serializer(serializers.Serializer) :
         Species_Data_ID=  serializers.IntegerField()
         Species=  serializers.CharField()

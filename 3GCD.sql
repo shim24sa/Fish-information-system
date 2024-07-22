@@ -11,7 +11,6 @@ DETERMINISTIC
 BEGIN
     DECLARE _radius_earth DOUBLE DEFAULT 6371;
     DECLARE _deg2rad DOUBLE DEFAULT PI() / 180;
-<<<<<<< HEAD
     DECLARE _dlat  DOUBLE DEFAULT _deg2rad *( _lat2 - _lat1);
     DECLARE _dlon DOUBLE DEFAULT __deg2rad * (_lon2 - _lon1);
 	DECLARE _haversin DOUBLE DEFAULT POWER(SIN(_dlat)/2,2)
@@ -21,14 +20,5 @@ BEGIN
     RETURN 2*ASIN(SQRT(_haversin))*_radius_earth;
     END;
 delimiter;
-=======
-    DECLARE _dlat DOUBLE DEFAULT _deg2rad * (_lat2 - _lat1);
-    DECLARE _dlon DOUBLE DEFAULT _deg2rad * (_lon2 - _lon1);
-    DECLARE _haversin DOUBLE DEFAULT POWER(SIN(_dlat) / 2, 2)
-        + COS(ABS(_lat1) * _deg2rad) * COS(ABS(_lat2) * _deg2rad) * POWER(SIN(_dlon) / 2, 2);
-    
-    RETURN 2 * ASIN(SQRT(_haversin)) * _radius_earth;
-END $$
->>>>>>> a297a6c (Updated GCD.sql)
 
 DELIMITER ;

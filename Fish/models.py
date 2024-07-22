@@ -21,15 +21,15 @@ class waterbodies(models.Model):
 def  get_GCD(Species_Data_ID1,Species_Data_ID2):
     cursor = connection.cursor()
     params=list((Species_Data_ID1,Species_Data_ID2))
-    cursor.execute("SELECT org.Start_Latitude,org.Start_Longitude,dest.Start_Longitude,dest.Start_Latitude,GCDist(org.Start_Latitude,org.Start_Longitude,dest.Start_Latitude,dest.Start_Longitude) from fishes_table org join fishes_table dest on org.Species_Data_ID=%s and dest.Species_Data_ID=%s",params=params) 
+    cursor.execute("SELECT round(org.Start_Latitude,2) ,round(org.Start_Longitude,2),round(dest.Start_Longitude,2),round(dest.Start_Latitude,2),round(GCDist(org.Start_Latitude,org.Start_Longitude,dest.Start_Latitude,dest.Start_Longitude),2) from fishes_table org join fishes_table dest on org.Species_Data_ID=%s and dest.Species_Data_ID=%s;",params=params)
     rows = cursor.fetchone()
     if(rows):
         data = {
-                "Start_Latitude_org  ":rows[0],
-                "Start_Longitude_org ":rows[1],
+                "Start_Latitude_org":rows[0],
+                "Start_Longitude_org":rows[1],
                 "Start_Longitude_dest":rows[2],
-                "Start_Latitude_dest ":rows[3],
-                "Distence ":rows[4]
+                "Start_Latitude_dest":rows[3],
+                "Distence":rows[4]
         }
         return  data
     else: 

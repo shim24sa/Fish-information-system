@@ -18,10 +18,10 @@ def Image_view(request,name):
     else:
         return Response({'error': f"Person with name '{name}' not found."}, status=404)
 
-@swagger_auto_schema(method="GET",manual_parameters=[openapi.Parameter("pk",openapi.IN_PATH,description="Spescies_id of the given Fish",type=openapi.TYPE_NUMBER)])
+@swagger_auto_schema(method="GET",manual_parameters=[openapi.Parameter("id",openapi.IN_PATH,description="Spescies_id of the given Fish",type=openapi.TYPE_NUMBER)])
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
-def Nearest(request,pk=None,format=None):
+def Nearest(request,pk=None):
     print(pk)
     res = find_nearest(pk)
     data= {"results":[]}
@@ -46,15 +46,15 @@ Species_param2 = openapi.Parameter("species_id2",openapi.IN_BODY,description="Na
                       responses={201:openapi.Response('respspecies_id2onse description',GCD_serializer),404: 'Species not found'})
 @api_view(["POST"])
 def GCD_View(request):
-    print(request.data)
     species_id1 = request.data['species_id1']
     species_id2 = request.data['species_id2']
     data = get_GCD(species_id1,species_id2) 
-    serializer = GCD_serializer(data)
+    print(data)
+    serializer = GCD_serializer(data=data)
     if(serializer.is_valid()):
-        return  serializer.data
+        return  Response(serializer.data)
     else:
-        return serializer.errors
+        return Response(serializer.errors)
 class waterBodies_View(ViewSet):
     def list(self,request):
         queryset = waterbodies.objects.all()
